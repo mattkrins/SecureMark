@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>SecureMark Options</title>
+	<link rel="icon" href="img/icon.png"/>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/tipr.min.js"></script>
+	<script src="js/progress.min.js"></script>
+	<script src="js/bookmark-functions.js"></script>
+	<script src="js/options.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/tipr.css"/>
+	<link type="text/css" rel="stylesheet" href="css/progressjs.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/options.css"/>
+</head>
+<body>
+	<h1>SecureMark</h1>
+	<div class="helper"><i class="fa fa-arrow-circle-up"></i></div>
+	<div class="container">
+			<div class="tab-wrap">
+				<input type="radio" id="tab1" name="tabGroup1" class="tab" checked /><label for="tab1">Encrypt <i class="fa fa-lock" aria-hidden="true"></i></label>
+				<input type="radio" id="tab2" name="tabGroup1" class="tab" /><label for="tab2">Decrypt <i class="fa fa-unlock" aria-hidden="true"></i></label>
+				<div class="tab-content">
+					<div id="choose-password">
+						<div class="dp"></div>
+						<div id="passwordStrength" class="strength0"></div>
+						<input type="password" value="" placeholder="Password" id="password" required/>
+						<input type="password" value="" placeholder="Confirm Password" id="password-confirm" required/>
+						<p><input type="checkbox" id="password-save" checked /><label for="password-save" class="tip" data-tip="Password will be purged after encryption.">Remember password for fast encryption</label></p>
+						<button id="save-password" disabled><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Continue</button>
+						<a class="link" id="privacy" href="#privacy">Privacy & Security</a>
+					</div>
+					<div id="encrypt-ready">
+						<div class="dp secure"></div>
+						<h2>PASSWORD IS SET</h2>
+						<button id="encrypt"><i class="fa fa-lock" aria-hidden="true"></i> Encrypt</button>
+						<h3>Or press the extension icon to Encrypt.</h3>
+						<a class="link" id="password-change" href="#change">Change Password</a>
+					</div>
+				</div>
+				<div class="tab-content">
+					<div id="choose-password">
+						<div class="dp decrypt"></div>
+						<input type="password" value="" placeholder="Password" id="decrypt-password" required/>
+						<p><input type="checkbox" id="password-remember" checked /><label for="password-remember" class="tip" data-tip="Password will be purged after encryption.">Remember password after decryption</label></p>
+						<button id="decrypt"><i class="fa fa-unlock" aria-hidden="true"></i> Decrypt</button>
+						<a class="link" id="lost" href="#lost">Lost your password?</a>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div id="usage_agreement" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>SecureMark Privacy & Security</h2> <div class="close fa fa-close"></div>    
+			</div>
+			<div class="modal-body">
+				<h3>Our Promise:</h3>
+				<p>
+					<ol>
+						<li><span style="color:CE2523;">SecureMark does <b>not</b> store any logs, period.</span> We will never track or trace anything, ever.</li>
+						<li>This extension is entirely client-side and only communicates with the chrome bookmarks <a href="https://developers.chrome.com/extensions/bookmarks" target="_blank">API</a>.</li>
+						<li>We cannot be compelled by law to provide identifying information because we have none.</li>
+						<li>Encrypted bookmarks are stored as HEX data using the <a href="https://code.google.com/archive/p/crypto-js/"/ target="_blank">CryptoJS</a> library with the <b>AES</b> cypher suite - the AES algorithm is still considered completely secure & unbroken.</li>
+						<li>The SecureMark GitHub repository will always be identical to the published version.</li>
+					</ol>
+					<h3 style="color:red;">INPORTANT - PLEASE READ:</h3>
+					<p>
+						<ul>
+							<li>Although SecureMark does not store any logs, there is no way of knowing what Google does.</li>
+							<li>Encrypted data is <b>impossible</b> to recover without the password. If you forget it, goodbye data.</li>
+							<li><b>Always <a href="https://support.google.com/chrome/answer/96816?hl=en" target="_blank">backup</a> your bookmarks</b> before using this extension. In the unlikely event that a bug occurs and your data is encrypted incorrectly, it is unlikely to be recoverable.</li>
+							<li>We provide no support, warranty or hold any liability for issues arising from use of this extension. <u>Use at your own risk</u>.</li>
+							<li>If you find a bug or issue with SecureMark, you can report it via the chrome store support link.</li>
+						</ul>
+					</p>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="lost_password" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Uh-Oh!</h2> <div class="close fa fa-close"></div>    
+			</div>
+			<div class="modal-body">
+				<h3>Forgotten your password?</h3>
+				<p>SecureMark does <b>not store passwords</b> and so encrypted bookmarks are completely <b>unrecoverable</b>.</p>
+				<p>You will need to open the chrome <a href="https://support.google.com/chrome/answer/188842?co=GENIE.Platform%3DDesktop&hl=en">bookmark manager</a> and delete your encrypted bookmarks.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

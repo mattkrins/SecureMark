@@ -1,0 +1,18 @@
+{
+	"version": "1.0",
+	"name": "SecureMark",
+	"author": "Matt Krins",
+	"homepage_url": "https://github.com/mattkrins/",
+	"description": "A bookmark encryption tool.",
+	"permissions": [ "bookmarks" ],
+	"options_page": "options.html",
+	"browser_action": {
+	  "default_title": "SecureMark",
+	  "default_icon": "img/icon.png",
+	  "default_popup": "popup.html"
+	},
+	"icons": {
+		"100": "img/icon_ready.png"
+	},
+	"manifest_version": 2
+}
